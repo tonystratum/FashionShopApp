@@ -10,8 +10,9 @@ ChatterBot
 click
 cymem
 elasticsearch
-en-core-web-sm
+email_validator
 Flask
+Flask-Admin
 Flask-Bcrypt
 Flask-Login
 Flask-Mail
