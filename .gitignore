@@ -131,3 +131,5 @@ dmypy.json
 # pycharm
 .idea
 
+# db
+fashionshop/site.db
