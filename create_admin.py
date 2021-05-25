@@ -4,7 +4,6 @@ from utils import query_to_dict
 
 # Enter the admin credentials below.
 # This user will be able to access the admin panel.
-# You will be able to add other admins from there.
 
 USERNAME = "admin"
 EMAIL = "admin@shop.com"

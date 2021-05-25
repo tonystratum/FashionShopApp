@@ -125,7 +125,8 @@ def product(product_id):
                 session['quantity'] += k[d]
 
         flash(f'Adding to shopping cart succesfully!', 'success')
-    recommended_index_products = recommender(product_id - 1)
+    #recommended_index_products = recommender(product_id - 1)
+    recommended_index_products = []
     recommended_products = []
     for id in recommended_index_products:
         p = Product.query.get(id + 1)
