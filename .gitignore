@@ -136,3 +136,6 @@ dmypy.json
 fashionshop/site.db
 fashionshop/psql_data/
 fashionshop/static/
+fashionshop/static/image/
+fashionshop/static/img/
+fashionshop/static/img/product/Fragrance/
