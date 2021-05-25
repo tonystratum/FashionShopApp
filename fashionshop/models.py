@@ -17,6 +17,7 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(60), nullable=False)
     birthday = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     gender = db.Column(db.String(10), nullable=False, default='Female')
+    admin = db.Column(db.Boolean(), nullable=False, default=False)
     # db.relationship
     comments = db.relationship('Comment', backref='author', lazy=True)
 
@@ -35,6 +36,9 @@ class User(db.Model, UserMixin):
     def __repr__(self):
         return f"User('{self.username}','{self.email}')"
 
+    def is_admin(self):
+        return self.admin
+
 
 class Comment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -44,7 +48,7 @@ class Comment(db.Model):
     product_id = db.Column(db.Integer, db.ForeignKey('product.id'), nullable=False)
 
     def __repr__(self):
-        return f"Comment('{self.title}','{self.date_posted}')"
+        return f"Comment('{self.content}','{self.date_posted}')"
 
 
 class Product(db.Model):
