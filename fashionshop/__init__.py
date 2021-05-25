@@ -10,10 +10,10 @@ from elasticsearch import Elasticsearch
 import os
 
 # postgresql cfg
-USER = "postgres"
-PASSWORD = "postgres"
-HOST = "localhost"
-DB_NAME = "fsapp"
+USER = os.getenv('POSTGRES_USER', 'postgres')
+PASSWORD = os.getenv('POSTGRES_PASSWORD', 'postgres')
+HOST = os.getenv('POSTGRES_HOST', 'localhost')
+DB_NAME = os.getenv('POSTGRES_DB_NAME', 'fsapp')
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'

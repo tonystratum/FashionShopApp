@@ -3,7 +3,6 @@ from fashionshop.forms import RegistrationForm, LoginForm, InforForm, UserForm
 from fashionshop import db, bcrypt, app, es
 from fashionshop.models import *
 from flask_login import current_user, login_user, login_required, logout_user
-from product_recommender import *
 
 
 @app.route("/", methods=['GET', 'POST', 'PUT'])

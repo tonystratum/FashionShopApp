@@ -18,6 +18,7 @@ importlib-metadata
 itsdangerous
 Jinja2
 MarkupSafe
+Pillow
 psycopg2-binary
 pycparser
 six
