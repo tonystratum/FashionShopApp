@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from flask_admin import Admin
+from flask_admin.contrib.fileadmin import FileAdmin
 from fashionshop.admin_views import MyModelView, DashboardView
 from datetime import timedelta
 from elasticsearch import Elasticsearch
@@ -35,3 +36,4 @@ admin.add_view(MyModelView(User, db.session))
 admin.add_view(MyModelView(Product, db.session))
 admin.add_view(MyModelView(CartItem, db.session))
 admin.add_view(MyModelView(Category, db.session))
+admin.add_view(FileAdmin(os.path.abspath("fashionshop/static/image"), '/static/', name='Product Images'))
