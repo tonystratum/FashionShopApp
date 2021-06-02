@@ -11,9 +11,9 @@ services:
     depends_on:
       - db
   db:
-    image: postgres:13-alpine
+    image: postgres:13.3-alpine
     volumes:
-      - ./fashionshop/psql_data/:/var/lib/postgresql/data/
+      - postgres_data:/var/lib/postgresql/data/
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
@@ -22,7 +22,7 @@ services:
   nginx:
     build: ./fashionshop/nginx
     ports:
-      - 1337:80
+      - 80:80
     depends_on:
       - web
 
